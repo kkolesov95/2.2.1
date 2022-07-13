@@ -23,7 +23,6 @@ public class User {
    @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
    private Car car;
 
-
    public User() {}
    
    public User(String firstName, String lastName, String email) {

@@ -8,7 +8,6 @@ import javax.persistence.Entity;
 public class Car {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "model")
@@ -17,8 +16,8 @@ public class Car {
     @Column(name = "series")
     private int series;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "users_id")
+    @OneToOne(fetch = FetchType.LAZY)
+    @MapsId
     private User user;
 
     public Car(String model, int series) {
